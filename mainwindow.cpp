@@ -12,7 +12,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 
-MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
+MainWindow::MainWindow(QWidget *parent) : QWidget(parent), profileWindow(nullptr) {
     setMinimumSize(1080, 720);
     setWindowTitle("SonyaHelp");
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
@@ -64,16 +64,11 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
     menu->addAction(exitAction);
 
     // Обработчики для действий в меню
-    QObject::connect(profileAction, &QAction::triggered, []() {
-        qDebug() << "Открыть профиль!";
-        // Здесь можно добавить логику для открытия профиля
-    });
-
+    QObject::connect(profileAction, &QAction::triggered, this, &MainWindow::openProfile); // Исправлено
     QObject::connect(helpAction, &QAction::triggered, []() {
         qDebug() << "Открыть помощь!";
         // Здесь можно добавить логику для открытия окна помощи
     });
-
     QObject::connect(exitAction, &QAction::triggered, [&]() {
         qDebug() << "Выход из приложения!";
         QApplication::quit(); // Закрываем приложение
@@ -81,7 +76,11 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
 
     // Показываем меню при наведении курсора на иконку
     QObject::connect(iconButton, &HoverableToolButton::hovered, [menu]() {
+
         menu->exec(QCursor::pos());
+    });
+    QObject::connect(menu, &QMenu::aboutToHide, [menu]() {
+        menu->hide();
     });
 
     // Кнопки
@@ -116,4 +115,11 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
 void MainWindow::openRequestForm() {
     RequestForm *form = new RequestForm(dbManager, this);
     form->show();  // Открываем форму как модальное окно
+}
+
+void MainWindow::openProfile() {
+    if (!profileWindow) {  // Проверка, создано ли окно
+        profileWindow = new ProfileWindow(this);
+    }
+    profileWindow->show();
 }

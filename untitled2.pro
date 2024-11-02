@@ -12,12 +12,14 @@ SOURCES += \
     databasemanager.cpp \
     main.cpp \
     mainwindow.cpp \
+    profileWindow.cpp \
     requestform.cpp
 
 HEADERS += \
     HoverableToolButton.h \
     databasemanager.h \
     mainwindow.h \
+    profileWindow.h \
     requestform.h
 
 FORMS += \

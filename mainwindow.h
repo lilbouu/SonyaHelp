@@ -5,7 +5,7 @@
 #include "databasemanager.h"
 #include "requestform.h"
 #include "hoverabletoolbutton.h"
-
+#include "profilewindow.h"
 class MainWindow : public QWidget
 {
     Q_OBJECT
@@ -15,9 +15,11 @@ public:
 
 private slots:
     void openRequestForm();
+    void openProfile();
 
 private:
-    DatabaseManager *dbManager;  // Указатель на объект DatabaseManager
+    DatabaseManager *dbManager;
+ProfileWindow *profileWindow;    // Указатель на объект DatabaseManager
 };
 
 #endif // MAINWINDOW_H
