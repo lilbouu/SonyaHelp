@@ -46,4 +46,5 @@ bool DatabaseManager::insertRequest(const QString &surname, const QString &name,
         qDebug() << "Error adding customer:" << query.lastError().text();
         return false;
     }
+
 }
