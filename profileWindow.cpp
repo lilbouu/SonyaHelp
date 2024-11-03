@@ -6,7 +6,7 @@
 ProfileWindow::ProfileWindow(QWidget *parent)
     : QDialog(parent) {
     setWindowTitle("Профиль пользователя");
-    setMinimumSize(400, 600);  // Размер окна такой же, как у mainwindow
+    setMinimumSize(500, 600);  // Размер окна такой же, как у mainwindow
 
     // Создаем и настраиваем поля для профиля
     QLabel *surnameLabel = new QLabel("Фамилия:");
