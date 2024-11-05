@@ -6,8 +6,10 @@
 #include <QLineEdit>
 #include <QDateEdit>
 #include <QTextEdit>
+#include <QComboBox>
+#include <QLabel>
 
-class RequestForm : public QDialog // Меняем QWidget на QDialog
+class RequestForm : public QDialog
 {
     Q_OBJECT
 
@@ -16,15 +18,26 @@ public:
 
 private slots:
     void saveRequest();
+    void togglePhysicalMedicalDetailsField(int index);
+    void toggleMentalMedicalDetailsField(int index);
 
 private:
     DatabaseManager* dbManager;
-    QLineEdit* surnameEdit;
+    QComboBox* homeComboBox;
+    QComboBox* citizenComboBox;
+    QComboBox* f_healthComboBox;
+    QComboBox* m_healthComboBox;
+
     QLineEdit* nameEdit;
     QLineEdit* patronymicEdit;
     QDateEdit* birthDateEdit;
     QLineEdit* passportEdit;
     QTextEdit* problemDescriptionEdit;
+
+    QLabel* f_medicalDetailsLabel;
+    QTextEdit* f_medicalDetailsEdit;
+    QLabel* m_medicalDetailsLabel;
+    QTextEdit* m_medicalDetailsEdit;
 };
 
 #endif // REQUESTFORM_H

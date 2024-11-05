@@ -6,7 +6,6 @@
 #include <QVBoxLayout>
 #include <QDebug>
 #include <QMenu>
-#include <QtSvg/QSvgWidget>
 #include <QWidget>
 #include <QSqlDatabase>
 #include <QSqlQuery>
@@ -20,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent), profileWindow(nullptr
     db.setPort(3306);                // Порт
     db.setDatabaseName("sonyahelp_db"); // Имя базы данных
     db.setUserName("root");          // Имя пользователя
-    db.setPassword("tobishka12");    // Пароль
+    db.setPassword("Kuksova_pass");    // Пароль
 
     if (!db.open()) {
         qDebug() << "Не удалось подключиться к базе данных:" << db.lastError().text();
@@ -56,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent), profileWindow(nullptr
 
     QMenu *menu = new QMenu(iconButton);
     QAction *profileAction = new QAction("Мой Профиль", menu);
-    QAction *helpAction = new QAction("Помощь", menu);
+    QAction *helpAction = new QAction("О нас", menu);
     QAction *exitAction = new QAction("Выход", menu);
 
     menu->addAction(profileAction);
@@ -84,7 +83,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent), profileWindow(nullptr
     });
 
     // Кнопки
-    QPushButton *createRequestBtn = new QPushButton("Создать заявку", this);
+    QPushButton *createRequestBtn = new QPushButton("Создать обращение", this);
     QPushButton *myRequestsBtn = new QPushButton("Мои заявки", this);
     QFont buttonFont("Arial", 16, QFont::Bold);
     createRequestBtn->setFont(buttonFont);
