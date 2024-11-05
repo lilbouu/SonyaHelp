@@ -18,6 +18,8 @@
 #include <QToolButton>
 #include <QDebug>
 
+
+
 bool DatabaseManager::connect() {
     if (!db.open()) {
         qDebug() << "Не удалось подключиться к базе данных:" << db.lastError().text();
@@ -47,4 +49,42 @@ bool DatabaseManager::insertRequest(const QString &surname, const QString &name,
         return false;
     }
 
+}
+
+int DatabaseManager::addCustomer(const QString& surname, const QString& name, const QString& middlename,
+                                  const QDate& birthDate, int series, int number, const QString& citizenship) {
+    QSqlQuery query;
+    query.prepare("INSERT INTO customers (surname, name, middlename, date, series, number, сitizenship) "
+                  "VALUES (:surname, :name, :middlename, :birthDate, :series, :number, :citizenship)");
+    query.addBindValue(surname);
+    query.addBindValue(name);
+    query.addBindValue(middlename);
+    query.addBindValue(birthDate);
+    query.addBindValue(series);
+    query.addBindValue(number);
+    query.addBindValue(citizenship);
+
+    if (!query.exec()) {
+        qDebug() << "Failed to add customer:" << query.lastError();
+        return -1;  // Возвращаем -1 при ошибке
+    }
+
+    qint64 lastId = query.lastInsertId().toInt();
+    qDebug() << "Last inserted ID:" << lastId;
+    return lastId;
+}
+
+bool DatabaseManager::addUserCredentials(int customerId, const QString& username, const QString& passwordHash) {
+    QSqlQuery query;
+    query.prepare("INSERT INTO user_credentials (id_customers, username, password_hash) "
+                  "VALUES (:customerId, :username, :passwordHash)");
+    query.addBindValue(customerId);
+    query.addBindValue(username);
+    query.addBindValue(passwordHash);
+
+    if (!query.exec()) {
+        qDebug() << customerId << " " << "Failed to add user credentials:" << query.lastError();
+        return false;
+    }
+    return true;
 }

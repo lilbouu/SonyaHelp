@@ -6,7 +6,6 @@
 #include <QVBoxLayout>
 #include <QDebug>
 #include <QMenu>
-#include <QtSvg/QSvgWidget>
 #include <QWidget>
 #include <QSqlDatabase>
 #include <QSqlQuery>
