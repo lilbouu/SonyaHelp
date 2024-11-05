@@ -2,6 +2,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
+
 ProfileWindow::ProfileWindow(QWidget *parent)
     : QDialog(parent) {
     setWindowTitle("Профиль пользователя");
