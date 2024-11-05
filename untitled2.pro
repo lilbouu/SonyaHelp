@@ -11,17 +11,21 @@ CONFIG += c++17
 SOURCES += \
     adminwindow.cpp \
     databasemanager.cpp \
+    entrywindow.cpp \
     main.cpp \
     mainwindow.cpp \
     profileWindow.cpp \
+    registrationwindow.cpp \
     requestform.cpp \
 
 HEADERS += \
     HoverableToolButton.h \
     adminwindow.h \
     databasemanager.h \
+    entrywindow.h \
     mainwindow.h \
     profileWindow.h \
+    registrationwindow.h \
     requestform.h \
 
 FORMS += \
