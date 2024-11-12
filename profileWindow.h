@@ -12,7 +12,7 @@ private:
     QLineEdit *surnameEdit;
     QLineEdit *nameEdit;
     QLineEdit *patronymicEdit;
-    QDateEdit *birthDateEdit;
+    QLineEdit *birthDateEdit;
     QLineEdit *citizenshipEdit;
     QLineEdit *documentTypeEdit;
     QLineEdit *seriesEdit;

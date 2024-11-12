@@ -88,3 +88,17 @@ bool DatabaseManager::addUserCredentials(int customerId, const QString& username
     }
     return true;
 }
+bool DatabaseManager::verifyCredentials(const QString &username, const QString &passwordHash) {
+    QSqlQuery query;
+    query.prepare("SELECT COUNT(*) FROM user_credentials WHERE username = :username AND password_hash = :passwordHash");
+    query.bindValue(":username", username);
+    query.bindValue(":passwordHash", passwordHash);
+
+    if (query.exec() && query.next()) {
+        int count = query.value(0).toInt();
+        return count > 0;  // Если найдено совпадение, возвращаем true
+    } else {
+        qDebug() << "Ошибка при проверке учетных данных:" << query.lastError().text();
+        return false;
+    }
+}

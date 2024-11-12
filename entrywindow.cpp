@@ -10,6 +10,8 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QMessageBox>
+#include <QCryptographicHash>
 
 EntryWindow::EntryWindow(QWidget *parent) : QWidget(parent)
 {
@@ -71,11 +73,29 @@ EntryWindow::EntryWindow(QWidget *parent) : QWidget(parent)
     mainLayout->addLayout(registerLayout);
 
     connect(registerButton, &QPushButton::clicked, this, &EntryWindow::openRegistrationWindow);
-
+    connect(loginButton, &QPushButton::clicked, this, &EntryWindow::onLoginButtonClicked);
     setLayout(mainLayout);
 }
 void EntryWindow::openRegistrationWindow()
 {
     registrationWindow = new RegistrationWindow(dbManager, this);
     registrationWindow->show();
+}
+void EntryWindow::onLoginButtonClicked() {
+    QString username = usernameLineEdit->text();
+    QString password = passwordLineEdit->text();
+
+    // Хешируем введенный пароль
+    QString passwordHash = QString(QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256).toHex());
+
+    // Проверяем учетные данные
+    if (dbManager->verifyCredentials(username, passwordHash)) {
+        // Если учетные данные верны, открываем главное окно
+        MainWindow *mainWindow = new MainWindow();
+        mainWindow->show();
+        this->close();  // Закрываем окно входа
+    } else {
+        // Если неверные данные, показываем сообщение об ошибке
+        QMessageBox::warning(this, "Ошибка входа", "Неверный логин или пароль.");
+    }
 }

@@ -1,0 +1,13 @@
+debug/myapp_res.o
+debug/adminwindow.o
+debug/databasemanager.o
+debug/main.o
+debug/mainwindow.o
+debug/profileWindow.o
+debug/requestform.o
+debug/qrc_images.o
+debug/moc_HoverableToolButton.o
+debug/moc_adminwindow.o
+debug/moc_mainwindow.o
+debug/moc_profileWindow.o
+debug/moc_requestform.o

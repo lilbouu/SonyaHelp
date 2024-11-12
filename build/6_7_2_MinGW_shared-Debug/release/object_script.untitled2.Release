@@ -1,0 +1,13 @@
+release/myapp_res.o
+release/adminwindow.o
+release/databasemanager.o
+release/main.o
+release/mainwindow.o
+release/profileWindow.o
+release/requestform.o
+release/qrc_images.o
+release/moc_HoverableToolButton.o
+release/moc_adminwindow.o
+release/moc_mainwindow.o
+release/moc_profileWindow.o
+release/moc_requestform.o
