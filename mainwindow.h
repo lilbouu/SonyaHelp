@@ -11,14 +11,15 @@ class MainWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
-
+    explicit MainWindow(int id_customers, QWidget *parent = nullptr);
+    void setCustomerId(int id);
 private slots:
     void openRequestForm();
     void openProfile();
 
 private:
     DatabaseManager *dbManager;
+    int id_customers;
 ProfileWindow *profileWindow;    // Указатель на объект DatabaseManager
 };
 
