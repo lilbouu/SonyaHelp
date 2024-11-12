@@ -1,8 +1,8 @@
 #include "profilewindow.h"
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QPushButton>
-
 
 ProfileWindow::ProfileWindow(QWidget *parent)
     : QDialog(parent) {
@@ -10,6 +10,7 @@ ProfileWindow::ProfileWindow(QWidget *parent)
     setMinimumSize(500, 600);
        // Размер окна такой же, как у mainwindow
 
+<<<<<<< Updated upstream
     // Создаем и настраиваем поля для профиля
     QLabel *surnameLabel = new QLabel("Фамилия:");
     surnameEdit = new QLineEdit;
@@ -59,6 +60,45 @@ ProfileWindow::ProfileWindow(QWidget *parent)
     layout->addWidget(numberLabel);
     layout->addWidget(numberEdit);
     layout->addWidget(saveBtn);
+=======
+    // Предопределенные значения для полей профиля
+    QString surnameText = "Иванов";
+    QString nameText = "Иван";
+    QString patronymicText = "Иванович";
+    QString birthDateText = "01.01.1990";
+    QString citizenshipText = "Россия";
+    QString seriesText = "1234";
+    QString numberText = "567890";
+    // Создаем компоновку для всего окна
+    QVBoxLayout *layout = new QVBoxLayout;
+
+    // Функция для добавления строки с меткой и данными
+    auto addRow = [layout](const QString &labelText, const QString &valueText) {
+        QHBoxLayout *rowLayout = new QHBoxLayout;
+
+        QLabel *label = new QLabel(labelText);
+        QLabel *value = new QLabel(valueText);
+
+        // Настраиваем отступы для выравнивания
+        // Фиксированная ширина для выравнивания меток
+        value->setStyleSheet("color: #FFFFFF;");  // Белый цвет текста (опционально)
+
+        rowLayout->addWidget(label);
+        rowLayout->addWidget(value);
+        rowLayout->addStretch();  // Добавляем растяжку для выравнивания справа
+
+        layout->addLayout(rowLayout);
+    };
+
+    // Добавляем строки с данными
+    addRow("Фамилия:", surnameText);
+    addRow("Имя:", nameText);
+    addRow("Отчество:", patronymicText);
+    addRow("Дата рождения:", birthDateText);
+    addRow("Гражданство:", citizenshipText);
+    addRow("Серия:", seriesText);
+    addRow("Номер:", numberText);
+>>>>>>> Stashed changes
 
     setLayout(layout);
 
