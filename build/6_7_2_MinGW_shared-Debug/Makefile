@@ -80,12 +80,54 @@ Makefile: ../../untitled2.pro C:/msys64/mingw64/share/qt6/mkspecs/win32-g++/qmak
 		C:/msys64/mingw64/share/qt6/mkspecs/common/g++-win32.conf \
 		C:/msys64/mingw64/share/qt6/mkspecs/common/windows-desktop.conf \
 		C:/msys64/mingw64/share/qt6/mkspecs/qconfig.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3danimation.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3danimation_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dcore.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dcore_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dextras.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dextras_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dinput.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dinput_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dlogic.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquick.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquick_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickanimation.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickextras.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickextras_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickinput.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickinput_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickrender.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickrender_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickscene2d.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3drender.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3drender_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_activeqt.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_activeqt_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_axbase_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_axcontainer.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_axcontainer_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_axserver.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_axserver_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_bluetooth.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_bodymovin_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_charts.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_charts_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_chartsqml.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_chartsqml_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_concurrent.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_concurrent_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_core.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_core5compat.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_core5compat_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_core_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_datavisualization.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_datavisualization_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_datavisualizationqml.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_datavisualizationqml_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_dbus.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_dbus_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_designer.pri \
@@ -95,10 +137,17 @@ Makefile: ../../untitled2.pro C:/msys64/mingw64/share/qt6/mkspecs/win32-g++/qmak
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_entrypoint_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_example_icons_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_fb_support_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_grpc.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_grpc_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_grpcquick.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_grpcquick_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_gui.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_gui_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_help.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_help_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_httpserver.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_httpserver_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_jsonrpc_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labsanimation.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labsanimation_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labsfolderlistmodel.pri \
@@ -111,16 +160,40 @@ Makefile: ../../untitled2.pro C:/msys64/mingw64/share/qt6/mkspecs/win32-g++/qmak
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labssharedimage_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labswavefrontmesh.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_languageserver_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_linguist.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_location.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_location_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_multimedia.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_multimedia_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_multimediaquick_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_network.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_network_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_networkauth.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_networkauth_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_nfc.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_nfc_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_opengl.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_opengl_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_openglwidgets.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_openglwidgets_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_packetprotocol_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_positioning.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_positioning_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_positioningquick.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_positioningquick_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_printsupport.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_printsupport_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobuf.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobuf_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufqtcoretypes.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufqtcoretypes_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufqtguitypes.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufqtguitypes_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufwellknowntypes.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufwellknowntypes_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_qdoccatch_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_qdoccatchconversions_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_qdoccatchgenerators_private.pri \
@@ -171,8 +244,13 @@ Makefile: ../../untitled2.pro C:/msys64/mingw64/share/qt6/mkspecs/win32-g++/qmak
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dparticleeffects_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dparticles.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dparticles_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dphysics.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dphysics_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3druntimerender.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3druntimerender_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dutils.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dutils_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick_private.pri \
@@ -217,24 +295,66 @@ Makefile: ../../untitled2.pro C:/msys64/mingw64/share/qt6/mkspecs/win32-g++/qmak
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktemplates2.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktestutilsprivate_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktimeline.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktimeline_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktimelineblendtrees.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktimelineblendtrees_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quickwidgets.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_remoteobjects.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_remoteobjects_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_remoteobjectsqml.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_repparser.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_repparser_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_scxml.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_scxml_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_scxmlqml.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_scxmlqml_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sensors.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sensors_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sensorsquick.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sensorsquick_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_serialbus.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_serialbus_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_serialport.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_serialport_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_shadertools.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_shadertools_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_spatialaudio.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_spatialaudio_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sql.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sql_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_statemachine.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_statemachine_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_statemachineqml.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_statemachineqml_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_svg.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_svg_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_svgwidgets.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_svgwidgets_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_testlib.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_testlib_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_texttospeech.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_texttospeech_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_tools_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_uiplugin.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_uitools.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_uitools_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_virtualkeyboard.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_virtualkeyboard_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_virtualkeyboardsettings.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_virtualkeyboardsettings_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webchannel.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webchannel_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webchannelquick.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webchannelquick_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_websockets.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_websockets_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webview.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webview_private.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webviewquick.pri \
+		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webviewquick_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_widgets.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_widgets_private.pri \
 		C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_xml.pri \
@@ -283,12 +403,54 @@ C:/msys64/mingw64/share/qt6/mkspecs/common/windows-vulkan.conf:
 C:/msys64/mingw64/share/qt6/mkspecs/common/g++-win32.conf:
 C:/msys64/mingw64/share/qt6/mkspecs/common/windows-desktop.conf:
 C:/msys64/mingw64/share/qt6/mkspecs/qconfig.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3danimation.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3danimation_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dcore.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dcore_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dextras.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dextras_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dinput.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dinput_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dlogic.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dlogic_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquick.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquick_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickanimation.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickanimation_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickextras.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickextras_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickinput.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickinput_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickrender.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickrender_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickscene2d.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3dquickscene2d_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3drender.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_3drender_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_activeqt.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_activeqt_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_axbase_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_axcontainer.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_axcontainer_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_axserver.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_axserver_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_bluetooth.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_bluetooth_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_bodymovin_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_charts.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_charts_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_chartsqml.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_chartsqml_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_concurrent.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_concurrent_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_core.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_core5compat.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_core5compat_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_core_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_datavisualization.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_datavisualization_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_datavisualizationqml.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_datavisualizationqml_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_dbus.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_dbus_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_designer.pri:
@@ -298,10 +460,17 @@ C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_devicediscovery_support_priva
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_entrypoint_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_example_icons_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_fb_support_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_grpc.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_grpc_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_grpcquick.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_grpcquick_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_gui.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_gui_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_help.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_help_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_httpserver.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_httpserver_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_jsonrpc_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labsanimation.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labsanimation_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labsfolderlistmodel.pri:
@@ -314,16 +483,40 @@ C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labssharedimage.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labssharedimage_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labswavefrontmesh.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_languageserver_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_linguist.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_location.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_location_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_multimedia.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_multimedia_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_multimediaquick_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_multimediawidgets.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_network.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_network_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_networkauth.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_networkauth_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_nfc.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_nfc_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_opengl.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_opengl_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_openglwidgets.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_openglwidgets_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_packetprotocol_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_positioning.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_positioning_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_positioningquick.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_positioningquick_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_printsupport.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_printsupport_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobuf.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobuf_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufqtcoretypes.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufqtcoretypes_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufqtguitypes.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufqtguitypes_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufwellknowntypes.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_protobufwellknowntypes_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_qdoccatch_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_qdoccatchconversions_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_qdoccatchgenerators_private.pri:
@@ -374,8 +567,13 @@ C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dparticleeffects.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dparticleeffects_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dparticles.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dparticles_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dphysics.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dphysics_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3druntimerender.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3druntimerender_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dutils.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick3dutils_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quick_private.pri:
@@ -420,24 +618,66 @@ C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quickshapes_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktemplates2.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktemplates2_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktestutilsprivate_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktimeline.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktimeline_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktimelineblendtrees.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quicktimelineblendtrees_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quickwidgets.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_quickwidgets_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_remoteobjects.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_remoteobjects_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_remoteobjectsqml.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_repparser.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_repparser_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_scxml.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_scxml_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_scxmlqml.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_scxmlqml_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sensors.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sensors_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sensorsquick.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sensorsquick_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_serialbus.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_serialbus_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_serialport.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_serialport_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_shadertools.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_shadertools_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_spatialaudio.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_spatialaudio_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sql.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_sql_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_statemachine.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_statemachine_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_statemachineqml.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_statemachineqml_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_svg.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_svg_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_svgwidgets.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_svgwidgets_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_testlib.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_testlib_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_texttospeech.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_texttospeech_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_tools_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_uiplugin.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_uitools.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_uitools_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_virtualkeyboard.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_virtualkeyboard_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_virtualkeyboardsettings.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_virtualkeyboardsettings_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webchannel.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webchannel_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webchannelquick.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webchannelquick_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_websockets.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_websockets_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webview.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webview_private.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webviewquick.pri:
+C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_webviewquick_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_widgets.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_widgets_private.pri:
 C:/msys64/mingw64/share/qt6/mkspecs/modules/qt_lib_xml.pri:
