@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent), profileWindow(nullptr
     db.setPort(3306);                // Порт
     db.setDatabaseName("sonyahelp_db"); // Имя базы данных
     db.setUserName("root");          // Имя пользователя
-    db.setPassword("Kuksova_pass");    // Пароль
+    db.setPassword("tobishka12");    // Пароль
 
     if (!db.open()) {
         qDebug() << "Не удалось подключиться к базе данных:" << db.lastError().text();
