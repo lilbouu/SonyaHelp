@@ -89,9 +89,19 @@ void EntryWindow::onLoginButtonClicked() {
     QString passwordHash = QString(QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256).toHex());
 
     // Проверяем учетные данные
-    if (dbManager->verifyCredentials(username, passwordHash)) {
-        // Если учетные данные верны, открываем главное окно
-        MainWindow *mainWindow = new MainWindow();
+    QSqlQuery query;
+    query.prepare(R"(
+        SELECT id_customers FROM user_credentials
+        WHERE username = :username AND password_hash = :password_hash
+    )");
+    query.bindValue(":username", username);
+    query.bindValue(":password_hash", passwordHash);
+
+    if (query.exec() && query.next()) {
+        int id_customers = query.value("id_customers").toInt();
+
+        // Передаем id_customers в главное окно
+        MainWindow *mainWindow = new MainWindow(id_customers);
         mainWindow->show();
         this->close();  // Закрываем окно входа
     } else {
@@ -99,3 +109,4 @@ void EntryWindow::onLoginButtonClicked() {
         QMessageBox::warning(this, "Ошибка входа", "Неверный логин или пароль.");
     }
 }
+

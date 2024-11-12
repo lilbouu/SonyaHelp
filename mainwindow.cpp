@@ -11,22 +11,23 @@
 #include <QSqlQuery>
 #include <QSqlError>
 
-MainWindow::MainWindow(QWidget *parent) : QWidget(parent), profileWindow(nullptr) {
+MainWindow::MainWindow(int id_customers, QWidget *parent) : QWidget(parent),id_customers(id_customers), profileWindow(nullptr) {
     setMinimumSize(1080, 720);
     setWindowTitle("SonyaHelp");
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");     // Адрес сервера базы данных
-    db.setPort(3306);                // Порт
-    db.setDatabaseName("sonyahelp_db"); // Имя базы данных
-    db.setUserName("root");          // Имя пользователя
-    db.setPassword("tobishka12");    // Пароль
+    // QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    // db.setHostName("localhost");     // Адрес сервера базы данных
+    // db.setPort(3306);                // Порт
+    // db.setDatabaseName("sonyahelp_db"); // Имя базы данных
+    // db.setUserName("root");          // Имя пользователя
+    // db.setPassword("tobishka12");    // Пароль
 
-    if (!db.open()) {
-        qDebug() << "Не удалось подключиться к базе данных:" << db.lastError().text();
-        ;
-    }
-    qDebug() << "Подключение к базе данных успешно";
+    // if (!db.open()) {
+    //     qDebug() << "Не удалось подключиться к базе данных:" << db.lastError().text();
+    //     ;
+    // }
+    // qDebug() << "Подключение к базе данных успешно";
     // Верхняя панель
+
     QWidget *titleBar = new QWidget(this);
     titleBar->setFixedHeight(100);
     QHBoxLayout *titleLayout = new QHBoxLayout(titleBar);
@@ -104,6 +105,27 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent), profileWindow(nullptr
     mainLayout->addStretch();
     mainLayout->addLayout(buttonsLayout);
     mainLayout->addStretch();
+    QSqlQuery query;
+    query.prepare(R"(
+        SELECT surname, name, middlename, date, series, number, сitizenship
+        FROM customers
+        WHERE id_customers = :id_customers
+    )");
+    query.bindValue(":id_customers", id_customers);
+
+    QString surname, name, middlename, birthDate, сitizenship, series, number;
+
+    if (query.exec() && query.next()) {
+        surname = query.value("surname").toString();
+        name = query.value("name").toString();
+        middlename = query.value("middlename").toString();
+        birthDate = query.value("date").toDate().toString("dd.MM.yyyy");
+        series = query.value("series").toString();
+        number = query.value("number").toString();
+        сitizenship = query.value("сitizenship").toString();
+    } else {
+        qDebug() << "Ошибка при загрузке данных пользователя:" << query.lastError().text();
+    }
 
     setLayout(mainLayout);
 
@@ -117,8 +139,10 @@ void MainWindow::openRequestForm() {
 }
 
 void MainWindow::openProfile() {
-    if (!profileWindow) {  // Проверка, создано ли окно
-        profileWindow = new ProfileWindow(this);
+    if (!profileWindow) {
+        profileWindow = new ProfileWindow(id_customers, this);  // Передаем id_customers
     }
     profileWindow->show();
 }
+
+

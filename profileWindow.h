@@ -1,20 +1,21 @@
-#include <QDialog>
-#include <QLineEdit>
-#include <QDateEdit>
+#ifndef PROFILEWINDOW_H
+#define PROFILEWINDOW_H
 
-class ProfileWindow : public QDialog {  // Замените QWidget на QDialog
+#include <QDialog>
+#include <functional>
+#include <QVBoxLayout>// Необходимо для std::function
+
+class ProfileWindow : public QDialog {
     Q_OBJECT
 
 public:
-    explicit ProfileWindow(QWidget *parent = nullptr);
+    explicit ProfileWindow(int id_customers, QWidget *parent = nullptr);
 
 private:
-    QLineEdit *surnameEdit;
-    QLineEdit *nameEdit;
-    QLineEdit *patronymicEdit;
-    QLineEdit *birthDateEdit;
-    QLineEdit *citizenshipEdit;
-    QLineEdit *documentTypeEdit;
-    QLineEdit *seriesEdit;
-    QLineEdit *numberEdit;
+    int id_customers;
+
+    // Обновляем объявление loadUserData
+    void loadUserData(QVBoxLayout *layout, std::function<void(const QString&, const QString&)> addRow);
 };
+
+#endif // PROFILEWINDOW_H
