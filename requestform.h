@@ -18,8 +18,8 @@ public:
 
 private slots:
     void saveRequest();
-    void togglePhysicalMedicalDetailsField(int index);
-    void toggleMentalMedicalDetailsField(int index);
+    void toggleMedicalDetailsField(int index, QComboBox* comboBox, QLabel* label, QTextEdit* edit);
+    void showDependencySelection(); // Слот для показа окна выбора зависимости
 
 private:
     DatabaseManager* dbManager;
@@ -27,6 +27,11 @@ private:
     QComboBox* citizenComboBox;
     QComboBox* f_healthComboBox;
     QComboBox* m_healthComboBox;
+    QComboBox *workPlaceComboBox;  // Поле для информации о месте работы
+    QComboBox *dependencyComboBox;  // Поле для выбора зависимости
+    QDialog *dependencyDialog;      // Диалог для множественного выбора зависимости
+    QStringList selectedDependencies; // Список выбранных зависимостей
+    QComboBox* legal_helpComboBox;
 
     QLineEdit* nameEdit;
     QLineEdit* patronymicEdit;
@@ -38,6 +43,8 @@ private:
     QTextEdit* f_medicalDetailsEdit;
     QLabel* m_medicalDetailsLabel;
     QTextEdit* m_medicalDetailsEdit;
+    QLabel* lh_medicalDetailsLabel;
+    QTextEdit* lh_medicalDetailsEdit;
 };
 
 #endif // REQUESTFORM_H

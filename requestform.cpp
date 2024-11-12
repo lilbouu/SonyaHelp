@@ -19,6 +19,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QComboBox>
+#include <QCheckBox> // Добавьте это
 
 RequestForm::RequestForm(DatabaseManager* dbManager, QWidget *parent)
     : QDialog(parent), dbManager(dbManager) {
@@ -28,7 +29,7 @@ RequestForm::RequestForm(DatabaseManager* dbManager, QWidget *parent)
     // Поля формы
     QLabel *homeLabel = new QLabel("Жилищные условия");
     homeComboBox = new QComboBox;
-    homeComboBox->setPlaceholderText("Выберите вариант");
+    homeComboBox->setPlaceholderText("Выберите вариант:");
     homeComboBox->addItem("Временно проживаю у родственников");
     homeComboBox->addItem("Проживаю в социальном центре или приюте");
     homeComboBox->addItem("Не имею места жительства");
@@ -49,7 +50,6 @@ RequestForm::RequestForm(DatabaseManager* dbManager, QWidget *parent)
     f_healthComboBox->addItem("Мне необходимо медицинское вмешательство");
     f_healthComboBox->addItem("Не нуждаюсь в медицинском вмешательстве");
 
-    // Поле для дополнительных сведений по физическому состоянию
     f_medicalDetailsLabel = new QLabel("Подробности необходимого вмешательства:");
     f_medicalDetailsEdit = new QTextEdit;
     f_medicalDetailsLabel->setVisible(false);
@@ -61,11 +61,62 @@ RequestForm::RequestForm(DatabaseManager* dbManager, QWidget *parent)
     m_healthComboBox->addItem("Мне необходимо медицинское вмешательство");
     m_healthComboBox->addItem("Не нуждаюсь в медицинском вмешательстве");
 
-    // Поле для дополнительных сведений по ментальному состоянию
     m_medicalDetailsLabel = new QLabel("Подробности необходимого вмешательства:");
     m_medicalDetailsEdit = new QTextEdit;
     m_medicalDetailsLabel->setVisible(false);
     m_medicalDetailsEdit->setVisible(false);
+
+    QLabel *legal_helpLabel = new QLabel("Юридическая помощь");
+    legal_helpComboBox = new QComboBox;
+    legal_helpComboBox->setPlaceholderText("Выберите вариант:");
+    legal_helpComboBox->addItem("Мне необходима юридическая помощь");
+    legal_helpComboBox->addItem("Не нуждаюсь в юридической помощи");
+
+    lh_medicalDetailsLabel = new QLabel("Подробности вашей ситуации:");
+    lh_medicalDetailsEdit = new QTextEdit;
+    lh_medicalDetailsLabel->setVisible(false);
+    lh_medicalDetailsEdit->setVisible(false);
+
+
+    QLabel *workPlaceLabel = new QLabel("Место работы");
+    workPlaceComboBox = new QComboBox;
+    workPlaceComboBox->setPlaceholderText("Выберите вариант:");
+    workPlaceComboBox->addItem("Не имею работы");
+    workPlaceComboBox->addItem("Временно трудоустроен");
+    workPlaceComboBox->addItem("Работаю неофициально");
+    workPlaceComboBox->addItem("Имею стабильную работу");
+
+    // Поле "Проблема с зависимостью"
+    QLabel *dependencyLabel = new QLabel("Проблема с зависимостью");
+    dependencyComboBox = new QComboBox;
+    // Устанавливаем placeholder-текст
+    dependencyComboBox->setPlaceholderText("Выберите вариант:"); // Текст по умолчанию
+    dependencyComboBox->addItem("-");
+    dependencyComboBox->addItem("У меня зависимость от");
+
+    dependencyDialog = new QDialog(this);
+    dependencyDialog->setWindowTitle("Выберите зависимости");
+    dependencyDialog->setModal(true);
+    QVBoxLayout *dialogLayout = new QVBoxLayout(dependencyDialog);
+    QCheckBox *alcoholCheckBox = new QCheckBox("Алкоголь");
+    QCheckBox *drugsCheckBox = new QCheckBox("Наркотики");
+    QCheckBox *gamblingCheckBox = new QCheckBox("Азартные игры");
+    QCheckBox *smokingCheckBox = new QCheckBox("Курение");
+    dialogLayout->addWidget(alcoholCheckBox);
+    dialogLayout->addWidget(drugsCheckBox);
+    dialogLayout->addWidget(gamblingCheckBox);
+    dialogLayout->addWidget(smokingCheckBox);
+    QPushButton *confirmButton = new QPushButton("Подтвердить");
+    dialogLayout->addWidget(confirmButton);
+    connect(confirmButton, &QPushButton::clicked, [=]() {
+        selectedDependencies.clear();
+        if (alcoholCheckBox->isChecked()) selectedDependencies << "Алкоголь";
+        if (drugsCheckBox->isChecked()) selectedDependencies << "Наркотики";
+        if (gamblingCheckBox->isChecked()) selectedDependencies << "Азартные игры";
+        if (smokingCheckBox->isChecked()) selectedDependencies << "Курение";
+        dependencyComboBox->setCurrentText("У меня зависимость от: " + selectedDependencies.join(", "));
+        dependencyDialog->accept();
+    });
 
     QLabel *nameLabel = new QLabel("Имя:");
     nameEdit = new QLineEdit;
@@ -84,10 +135,8 @@ RequestForm::RequestForm(DatabaseManager* dbManager, QWidget *parent)
     QLabel *problemDescriptionLabel = new QLabel("Описание проблемы:");
     problemDescriptionEdit = new QTextEdit;
 
-    // Кнопка "Сохранить"
     QPushButton *saveBtn = new QPushButton("Сохранить");
 
-    // Компоновка элементов
     QVBoxLayout *formLayout = new QVBoxLayout;
     formLayout->addWidget(homeLabel);
     formLayout->addWidget(homeComboBox);
@@ -101,6 +150,16 @@ RequestForm::RequestForm(DatabaseManager* dbManager, QWidget *parent)
     formLayout->addWidget(m_healthComboBox);
     formLayout->addWidget(m_medicalDetailsLabel);
     formLayout->addWidget(m_medicalDetailsEdit);
+    formLayout->addWidget(legal_helpLabel);
+    formLayout->addWidget(legal_helpComboBox);
+    formLayout->addWidget(lh_medicalDetailsLabel);
+    formLayout->addWidget(lh_medicalDetailsEdit);
+    formLayout->addWidget(workPlaceLabel);
+    formLayout->addWidget(workPlaceComboBox);
+
+    formLayout->addWidget(dependencyLabel);
+    formLayout->addWidget(dependencyComboBox);
+
     formLayout->addWidget(nameLabel);
     formLayout->addWidget(nameEdit);
     formLayout->addWidget(patronymicLabel);
@@ -114,31 +173,35 @@ RequestForm::RequestForm(DatabaseManager* dbManager, QWidget *parent)
     formLayout->addWidget(saveBtn);
     setLayout(formLayout);
 
-    // Подключение сигналов для отображения/скрытия поля медицинских сведений
-    connect(f_healthComboBox, &QComboBox::currentIndexChanged, this, &RequestForm::togglePhysicalMedicalDetailsField);
-    connect(m_healthComboBox, &QComboBox::currentIndexChanged, this, &RequestForm::toggleMentalMedicalDetailsField);
+    connect(f_healthComboBox, &QComboBox::currentIndexChanged, this, [this](int index) {
+        toggleMedicalDetailsField(index, f_healthComboBox, f_medicalDetailsLabel, f_medicalDetailsEdit);
+    });
+
+    connect(m_healthComboBox, &QComboBox::currentIndexChanged, this, [this](int index) {
+        toggleMedicalDetailsField(index, m_healthComboBox, m_medicalDetailsLabel, m_medicalDetailsEdit);
+    });
+
+    connect(legal_helpComboBox, &QComboBox::currentIndexChanged, this, [this](int index) {
+        toggleMedicalDetailsField(index, legal_helpComboBox, lh_medicalDetailsLabel, lh_medicalDetailsEdit);
+    });
+
+    connect(dependencyComboBox, &QComboBox::currentIndexChanged, this, &RequestForm::showDependencySelection);
+
     connect(saveBtn, &QPushButton::clicked, this, &RequestForm::saveRequest);
 }
 
-void RequestForm::togglePhysicalMedicalDetailsField(int index) {
-    if (f_healthComboBox->itemText(index) == "Мне необходимо медицинское вмешательство") {
-        f_medicalDetailsLabel->setVisible(true);
-        f_medicalDetailsEdit->setVisible(true);
+
+void RequestForm::toggleMedicalDetailsField(int index, QComboBox* comboBox, QLabel* label, QTextEdit* edit) {
+    QString selectedText = comboBox->itemText(index);
+    if (selectedText == "Мне необходимо медицинское вмешательство" || selectedText == "Мне необходима юридическая помощь") {
+        label->setVisible(true);
+        edit->setVisible(true);
     } else {
-        f_medicalDetailsLabel->setVisible(false);
-        f_medicalDetailsEdit->setVisible(false);
+        label->setVisible(false);
+        edit->setVisible(false);
     }
 }
 
-void RequestForm::toggleMentalMedicalDetailsField(int index) {
-    if (m_healthComboBox->itemText(index) == "Мне необходимо медицинское вмешательство") {
-        m_medicalDetailsLabel->setVisible(true);
-        m_medicalDetailsEdit->setVisible(true);
-    } else {
-        m_medicalDetailsLabel->setVisible(false);
-        m_medicalDetailsEdit->setVisible(false);
-    }
-}
 
 void RequestForm::saveRequest() {
     QString home = homeComboBox->currentText();
@@ -158,3 +221,15 @@ void RequestForm::saveRequest() {
         QMessageBox::critical(this, "Ошибка", "Не удалось сохранить заявку.");
     }
 }
+
+void RequestForm::showDependencySelection() {
+    if (dependencyComboBox->currentIndex() == 0) {
+        return; // Игнорируем, если выбрано значение по умолчанию
+    }
+    if (dependencyComboBox->currentText() == "У меня зависимость от") {
+        // Показываем диалоговое окно для множественного выбора
+        dependencyDialog->exec();
+    }
+}
+
+

@@ -39,9 +39,15 @@ constexpr auto qt_meta_stringdata_CLASSRequestFormENDCLASS = QtMocHelpers::strin
     "RequestForm",
     "saveRequest",
     "",
-    "togglePhysicalMedicalDetailsField",
+    "toggleMedicalDetailsField",
     "index",
-    "toggleMentalMedicalDetailsField"
+    "QComboBox*",
+    "comboBox",
+    "QLabel*",
+    "label",
+    "QTextEdit*",
+    "edit",
+    "showDependencySelection"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -63,13 +69,13 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSRequestFormENDCLASS[] = {
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
        1,    0,   32,    2, 0x08,    1 /* Private */,
-       3,    1,   33,    2, 0x08,    2 /* Private */,
-       5,    1,   36,    2, 0x08,    4 /* Private */,
+       3,    4,   33,    2, 0x08,    2 /* Private */,
+      11,    0,   42,    2, 0x08,    7 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    4,
-    QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void, QMetaType::Int, 0x80000000 | 5, 0x80000000 | 7, 0x80000000 | 9,    4,    6,    8,   10,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -85,12 +91,14 @@ Q_CONSTINIT const QMetaObject RequestForm::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<RequestForm, std::true_type>,
         // method 'saveRequest'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'togglePhysicalMedicalDetailsField'
+        // method 'toggleMedicalDetailsField'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
-        // method 'toggleMentalMedicalDetailsField'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>
+        QtPrivate::TypeAndForceComplete<QComboBox *, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QLabel *, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QTextEdit *, std::false_type>,
+        // method 'showDependencySelection'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -102,9 +110,24 @@ void RequestForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         (void)_t;
         switch (_id) {
         case 0: _t->saveRequest(); break;
-        case 1: _t->togglePhysicalMedicalDetailsField((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 2: _t->toggleMentalMedicalDetailsField((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 1: _t->toggleMedicalDetailsField((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QComboBox*>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QLabel*>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QTextEdit*>>(_a[4]))); break;
+        case 2: _t->showDependencySelection(); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+        case 1:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 1:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QComboBox* >(); break;
+            case 2:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QLabel* >(); break;
+            case 3:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QTextEdit* >(); break;
+            }
+            break;
         }
     }
 }
@@ -133,7 +156,7 @@ int RequestForm::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 3)
-            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+            qt_static_metacall(this, _c, _id, _a);
         _id -= 3;
     }
     return _id;
