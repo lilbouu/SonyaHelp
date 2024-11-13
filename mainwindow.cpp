@@ -34,7 +34,7 @@ MainWindow::MainWindow(int id_customers, QWidget *parent) : QWidget(parent),id_c
 
     // Логотип
     QLabel *imageLabel = new QLabel(titleBar);
-    QPixmap leftImage(":/images/friends.svg");
+    QPixmap leftImage(":/images/logotip.svg");
     imageLabel->setPixmap(leftImage.scaled(60, 60, Qt::KeepAspectRatio));
     imageLabel->setFixedSize(60, 60);
     titleLayout->addWidget(imageLabel);

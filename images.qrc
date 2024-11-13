@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/images">
         <file>logotip.svg</file>
-        <file>friends.svg</file>
         <file>person.svg</file>
     </qresource>
 </RCC>
