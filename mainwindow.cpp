@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "aboutdialog.h"
 #include <QApplication>
 #include <QLabel>
 #include <QPushButton>
@@ -82,6 +83,11 @@ MainWindow::MainWindow(int id_customers, QWidget *parent) : QWidget(parent),id_c
     QObject::connect(menu, &QMenu::aboutToHide, [menu]() {
         menu->hide();
     });
+    QObject::connect(helpAction, &QAction::triggered, this, [this]() {
+        AboutDialog aboutDialog(this); // Создаем диалог
+        aboutDialog.exec();            // Показываем как модальное окно
+    });
+
 
     // Кнопки
     QPushButton *createRequestBtn = new QPushButton("Создать обращение", this);

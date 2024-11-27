@@ -15,6 +15,7 @@ class EntryWindow : public QWidget
 private slots:
     void openRegistrationWindow();
     void onLoginButtonClicked();
+    bool eventFilter(QObject *obj, QEvent *event);
 public:
     explicit EntryWindow(QWidget *parent = nullptr);
 
