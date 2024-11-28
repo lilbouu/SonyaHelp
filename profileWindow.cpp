@@ -6,23 +6,33 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QDate>
+#include <QPushButton>
 
 ProfileWindow::ProfileWindow(int id_customers, QWidget *parent)
     : QDialog(parent), id_customers(id_customers) {
     setWindowTitle("Профиль пользователя");
-    setMinimumSize(500, 600);
+    setMinimumSize(600, 700);
 
     QVBoxLayout *layout = new QVBoxLayout;
+
+    // Устанавливаем стиль окна
+    setStyleSheet("background-color: #282c34; color: #FFFFFF; font-family: 'Arial'; font-size: 16px;");
+
+    // Заголовок
+    QLabel *title = new QLabel("Профиль пользователя");
+    title->setAlignment(Qt::AlignCenter);
+    title->setStyleSheet("font-size: 24px; font-weight: bold; margin-bottom: 20px;");
+    layout->addWidget(title);
 
     // Функция для добавления строки с меткой и данными
     auto addRow = [layout](const QString &labelText, const QString &valueText) {
         QHBoxLayout *rowLayout = new QHBoxLayout;
 
         QLabel *label = new QLabel(labelText);
-        QLabel *value = new QLabel(valueText);
+        label->setStyleSheet("font-weight: bold; font-size: 18px; margin-right: 10px;");
 
-        label->setFixedWidth(150);
-        value->setStyleSheet("color: #FFFFFF;");
+        QLabel *value = new QLabel(valueText);
+        value->setStyleSheet("color: #FFFFFF; font-size: 16px;");
 
         rowLayout->addWidget(label);
         rowLayout->addWidget(value);
@@ -33,6 +43,15 @@ ProfileWindow::ProfileWindow(int id_customers, QWidget *parent)
 
     // Загружаем данные пользователя и добавляем строки с данными в интерфейс
     loadUserData(layout, addRow);
+
+    // Кнопка закрытия
+    QPushButton *closeButton = new QPushButton("Закрыть");
+    closeButton->setStyleSheet(
+        "background-color: #61afef; color: #FFFFFF; border: none; padding: 10px 20px; font-size: 16px; font-weight: bold; border-radius: 5px;"
+        );
+    connect(closeButton, &QPushButton::clicked, this, &ProfileWindow::accept);
+    layout->addWidget(closeButton);
+    layout->setAlignment(closeButton, Qt::AlignCenter);
 
     setLayout(layout);
 }

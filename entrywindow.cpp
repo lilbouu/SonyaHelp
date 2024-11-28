@@ -45,6 +45,7 @@ EntryWindow::EntryWindow(QWidget *parent) : QWidget(parent)
     // Кнопка входа
     loginButton = new QPushButton("Войти", this);
 
+
     // Кнопка регистрации
     QLabel *registerLabel = new QLabel("Если у вас нет аккаунта:", this);
     registerButton = new QPushButton("Регистрация", this);
@@ -75,7 +76,22 @@ EntryWindow::EntryWindow(QWidget *parent) : QWidget(parent)
     connect(registerButton, &QPushButton::clicked, this, &EntryWindow::openRegistrationWindow);
     connect(loginButton, &QPushButton::clicked, this, &EntryWindow::onLoginButtonClicked);
     setLayout(mainLayout);
+    passwordLineEdit->installEventFilter(this);
 }
+bool EntryWindow::eventFilter(QObject *obj, QEvent *event)
+{
+    if (obj == passwordLineEdit && event->type() == QEvent::KeyPress) {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+        if (keyEvent->key() == Qt::Key_Return || keyEvent->key() == Qt::Key_Enter) {
+            // Если нажата клавиша Enter, нажимаем кнопку входа
+            loginButton->click();
+            return true; // Указываем, что событие обработано
+        }
+    }
+    // Передаем остальные события базовому классу
+    return QWidget::eventFilter(obj, event);
+}
+
 void EntryWindow::openRegistrationWindow()
 {
     registrationWindow = new RegistrationWindow(dbManager, this);

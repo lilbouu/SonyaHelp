@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "aboutdialog.h"
 #include <QApplication>
 #include <QLabel>
 #include <QPushButton>
@@ -34,7 +35,7 @@ MainWindow::MainWindow(int id_customers, QWidget *parent) : QWidget(parent),id_c
 
     // Логотип
     QLabel *imageLabel = new QLabel(titleBar);
-    QPixmap leftImage(":/images/friends.svg");
+    QPixmap leftImage(":/images/logotip.svg");
     imageLabel->setPixmap(leftImage.scaled(60, 60, Qt::KeepAspectRatio));
     imageLabel->setFixedSize(60, 60);
     titleLayout->addWidget(imageLabel);
@@ -82,6 +83,11 @@ MainWindow::MainWindow(int id_customers, QWidget *parent) : QWidget(parent),id_c
     QObject::connect(menu, &QMenu::aboutToHide, [menu]() {
         menu->hide();
     });
+    QObject::connect(helpAction, &QAction::triggered, this, [this]() {
+        AboutDialog aboutDialog(this); // Создаем диалог
+        aboutDialog.exec();            // Показываем как модальное окно
+    });
+
 
     // Кнопки
     QPushButton *createRequestBtn = new QPushButton("Создать обращение", this);
