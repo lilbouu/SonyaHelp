@@ -15,19 +15,6 @@
 MainWindow::MainWindow(int id_customers, QWidget *parent) : QWidget(parent),id_customers(id_customers), profileWindow(nullptr) {
     setMinimumSize(1080, 720);
     setWindowTitle("SonyaHelp");
-    // QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    // db.setHostName("localhost");     // Адрес сервера базы данных
-    // db.setPort(3306);                // Порт
-    // db.setDatabaseName("sonyahelp_db"); // Имя базы данных
-    // db.setUserName("root");          // Имя пользователя
-    // db.setPassword("tobishka12");    // Пароль
-
-    // if (!db.open()) {
-    //     qDebug() << "Не удалось подключиться к базе данных:" << db.lastError().text();
-    //     ;
-    // }
-    // qDebug() << "Подключение к базе данных успешно";
-    // Верхняя панель
 
     QWidget *titleBar = new QWidget(this);
     titleBar->setFixedHeight(100);

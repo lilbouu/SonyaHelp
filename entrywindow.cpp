@@ -1,5 +1,6 @@
 // entrywindow.cpp
 #include "entrywindow.h"
+#include "adminwindow.h"
 #include <QLineEdit>
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -107,22 +108,28 @@ void EntryWindow::onLoginButtonClicked() {
     // Проверяем учетные данные
     QSqlQuery query;
     query.prepare(R"(
-        SELECT id_customers FROM user_credentials
-        WHERE username = :username AND password_hash = :password_hash
-    )");
+    SELECT id_customers, is_admin FROM user_credentials
+    WHERE username = :username AND password_hash = :password_hash
+)");
     query.bindValue(":username", username);
     query.bindValue(":password_hash", passwordHash);
 
     if (query.exec() && query.next()) {
         int id_customers = query.value("id_customers").toInt();
+        bool isAdmin = query.value("is_admin").toBool();
 
-        // Передаем id_customers в главное окно
-        MainWindow *mainWindow = new MainWindow(id_customers);
-        mainWindow->show();
-        this->close();  // Закрываем окно входа
+        if (isAdmin) {
+            AdminWindow *adminWindow = new AdminWindow();
+            adminWindow->show();
+        } else {
+            MainWindow *mainWindow = new MainWindow(id_customers);
+            mainWindow->show();
+        }
+
+        this->close();
     } else {
-        // Если неверные данные, показываем сообщение об ошибке
         QMessageBox::warning(this, "Ошибка входа", "Неверный логин или пароль.");
     }
+
 }
 

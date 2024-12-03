@@ -1,89 +1,71 @@
 #include "adminwindow.h"
+#include "usertabledialog.h" // Новый диалог для таблицы
+#include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QPushButton>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QMenu>
-#include <QApplication>
-#include <QDebug>
+#include <QMessageBox>
 
-AdminWindow::AdminWindow(QWidget *parent)
-    : QWidget(parent)
-{
-    // Устанавливаем размер и заголовок окна
+AdminWindow::AdminWindow(QWidget *parent) : QWidget(parent) {
     setMinimumSize(1080, 720);
-    setWindowTitle("SonyaHelp: admin access");
+    setWindowTitle("Admin Panel - SonyaHelp");
 
     // Верхняя панель
     QWidget *titleBar = new QWidget(this);
     titleBar->setFixedHeight(100);
     QHBoxLayout *titleLayout = new QHBoxLayout(titleBar);
-
-    // Логотип
     QLabel *imageLabel = new QLabel(titleBar);
-    QPixmap leftImage(":/images/friends.svg");
-    imageLabel->setPixmap(leftImage.scaled(60, 60, Qt::KeepAspectRatio));
+    QPixmap logo(":/images/logotip.svg");
+    imageLabel->setPixmap(logo.scaled(60, 60, Qt::KeepAspectRatio));
     imageLabel->setFixedSize(60, 60);
     titleLayout->addWidget(imageLabel);
     titleLayout->addStretch();
 
-    // Заголовок
-    QLabel *titleLabel = new QLabel("SonyaHelp: admin access", titleBar);
+    QLabel *titleLabel = new QLabel("Admin Panel - SonyaHelp", titleBar);
     titleLabel->setAlignment(Qt::AlignCenter);
     titleLabel->setFont(QFont("Arial", 16, QFont::Bold));
     titleLayout->addWidget(titleLabel);
     titleLayout->addStretch();
 
-    // Кнопка профиля (с меню)
-    QMenu *menu = new QMenu(this);
-    QAction *exitAction = new QAction("Выход", menu);
-    menu->addAction(exitAction);
+    // Кнопки
+    QPushButton *viewUsersBtn = new QPushButton("Показать всех пользователей", this);
+    QPushButton *manageRequestsBtn = new QPushButton("Управление заявками", this);
+    QPushButton *logoutBtn = new QPushButton("Выйти", this);
 
-    // Подключение к слоту выхода из приложения
-    connect(exitAction, &QAction::triggered, this, &AdminWindow::exitApplication);
+    QFont buttonFont("Arial", 14, QFont::Bold);
+    viewUsersBtn->setFont(buttonFont);
+    manageRequestsBtn->setFont(buttonFont);
+    logoutBtn->setFont(buttonFont);
 
-    // Кнопка меню
-    QPushButton *menuButton = new QPushButton(titleBar);
-    menuButton->setIcon(QIcon(":/images/person.svg"));
-    menuButton->setToolTip("Menu");
-    menuButton->setFixedSize(70, 70);
-    titleLayout->addWidget(menuButton);
+    viewUsersBtn->setMinimumSize(350, 100);
+    manageRequestsBtn->setMinimumSize(350, 100);
+    logoutBtn->setMinimumSize(350, 100);
 
-    // Показываем меню при клике на кнопку
-    connect(menuButton, &QPushButton::clicked, [menu, menuButton]() {
-        menu->exec(menuButton->mapToGlobal(menuButton->rect().bottomRight()));
-    });
 
-    // Кнопка "Заявки пользователей"
-    QPushButton *userRequestsButton = new QPushButton("Заявки пользователей", this);
-    QFont buttonFont("Arial", 16, QFont::Bold);
-    userRequestsButton->setFont(buttonFont);
-    userRequestsButton->setMinimumSize(350, 120);
-    userRequestsButton->setMaximumSize(400, 150);
-
-    // Подключаем кнопку "Заявки пользователей" к слоту
-    connect(userRequestsButton, &QPushButton::clicked, this, &AdminWindow::openUserRequests);
+    QVBoxLayout *buttonsLayout = new QVBoxLayout;
+    buttonsLayout->addWidget(viewUsersBtn);
+    buttonsLayout->addWidget(manageRequestsBtn);
+    buttonsLayout->addWidget(logoutBtn);
+    buttonsLayout->setAlignment(Qt::AlignCenter);
 
     // Главный компоновщик
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addWidget(titleBar);
     mainLayout->addStretch();
-    mainLayout->addWidget(userRequestsButton, 0, Qt::AlignCenter);
+    mainLayout->addLayout(buttonsLayout);
     mainLayout->addStretch();
-
     setLayout(mainLayout);
+
+    // Подключение сигналов
+    connect(viewUsersBtn, &QPushButton::clicked, this, &AdminWindow::openUserTableDialog);
+    connect(logoutBtn, &QPushButton::clicked, this, &AdminWindow::logout);
 }
 
-// Слот для открытия заявок пользователей
-void AdminWindow::openUserRequests()
-{
-    qDebug() << "Открыть заявки пользователей";
-    // Здесь можно добавить логику открытия окна с заявками пользователей
+void AdminWindow::openUserTableDialog() {
+    UserTableDialog *dialog = new UserTableDialog(this); // Создаем диалог
+    dialog->exec();                                      // Открываем как модальное окно
 }
 
-// Слот для выхода из приложения
-void AdminWindow::exitApplication()
-{
-    qDebug() << "Выход из приложения!";
-    QApplication::quit();
+void AdminWindow::logout() {
+    close(); // Закрыть окно
 }

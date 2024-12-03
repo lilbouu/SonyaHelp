@@ -18,6 +18,7 @@ SOURCES += \
     profileWindow.cpp \
     registrationwindow.cpp \
     requestform.cpp \
+    usertabledialog.cpp
 
 HEADERS += \
     HoverableToolButton.h \
@@ -29,6 +30,7 @@ HEADERS += \
     profileWindow.h \
     registrationwindow.h \
     requestform.h \
+    usertabledialog.h
 
 FORMS += \
     mainwindow.ui

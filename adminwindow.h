@@ -2,17 +2,22 @@
 #define ADMINWINDOW_H
 
 #include <QWidget>
+#include <QTableWidget>
+#include <QSqlQuery>
 
-class AdminWindow : public QWidget
-{
+class AdminWindow : public QWidget {
     Q_OBJECT
 
 public:
     explicit AdminWindow(QWidget *parent = nullptr);
-
 private slots:
-    void openUserRequests();  // Слот для открытия списка заявок пользователей
-    void exitApplication();   // Слот для выхода из приложения
+    void openUserTableDialog();
+    void logout();
+
+private:
+    QTableWidget *tableWidget;
+
+    void loadCustomerData();
 };
 
 #endif // ADMINWINDOW_H
